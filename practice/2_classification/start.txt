@@ -1,0 +1,3 @@
+1. openvinoenv
+2. openvino vars
+3. python 2_classification\doge_classifier.py -m public\squeezenet1.1\FP16\squeezenet1.1.xml -w public\squeezenet1.1\FP16\squeezenet1.1.bin -i 2_classification\doge.jpg
