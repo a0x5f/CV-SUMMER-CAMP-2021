@@ -114,4 +114,5 @@ dmypy.json
 .pyre/
 
 .vscode
+.idea
 practice/4_tracking/tracking_data.zip

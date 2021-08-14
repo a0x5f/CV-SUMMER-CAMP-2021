@@ -30,6 +30,10 @@ class Demonstrator:
         max_track_id = max(ann_obj.track_id for ann_obj in annotation_storage.all_objects)
         colors = get_random_colors(max_track_id+1)
 
+        videoWriter = cv2.VideoWriter((self.dst_folder / "tracking_data.mp4").as_posix(),
+                                cv2.VideoWriter_fourcc(*"mp4v"),
+                                30, (1280, 720))
+
         all_track_centers = {}
         first_frame_index = min(annotation_storage.get_list_of_frame_indexes())
         last_frame_index = max(annotation_storage.get_list_of_frame_indexes())
@@ -84,7 +88,8 @@ class Demonstrator:
                 cv2.imshow("tracking", img)
                 cv2.waitKey(25)
 
-            cv2.imwrite(dst_img_path.as_posix(), img)
+            videoWriter.write(cv2.resize(img, (1280, 720)))
+            #cv2.imwrite(dst_img_path.as_posix(), img)
 
     @staticmethod
     def _draw_track_centers(img, track_centers, color):
