@@ -1,2 +1,0 @@
-https://en.wikipedia.org/wiki/OpenCV
-https://en.wikipedia.org/wiki/OpenVINO
